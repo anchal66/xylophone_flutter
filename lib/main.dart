@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
   Expanded soundPallete({required int soundNumber, required Color colorArg}) {
     return Expanded(
         child: TextButton(
-      style: ButtonStyle(enableFeedback: false),
+      style:
+          TextButton.styleFrom(enableFeedback: false, padding: EdgeInsets.zero),
       onPressed: () => playSound(soundNumber),
       child: Container(
         color: colorArg,
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
         child: Scaffold(
           backgroundColor: Colors.black,
           body: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               soundPallete(soundNumber: 1, colorArg: Colors.purple),
               soundPallete(soundNumber: 2, colorArg: Colors.indigo),
