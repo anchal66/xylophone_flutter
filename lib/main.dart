@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+  final player = AudioPlayer();
 
   playSound(int soundNumber) async {
-    final player = AudioPlayer();
     var duration = await player.setAsset('assets/note$soundNumber.wav');
     player.play();
   }
